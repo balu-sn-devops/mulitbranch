@@ -35,7 +35,7 @@ pipeline {
 				branch 'prod'
 			}
 			steps {
-				echo 'prod branch deployment ...'
+				echo 'prod branch deployment...'
 				snDevOpsStep()
 				sleep 5
 			}
