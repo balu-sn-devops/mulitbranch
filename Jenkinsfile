@@ -15,6 +15,7 @@ pipeline {
 			steps {
 				echo 'test..'
 				snDevOpsStep()
+				snDevOpsArtifact(artifactsPayload:"""{"artifacts": [{"name": "qa_artifact.jar","version": "1.1","semanticVersion": "1.1.0","repositoryName": "multibranch"}],"stageName": "Deploy for QA"}""")
 				sleep 5
 				//snDevOpsChange()
 			}
@@ -26,7 +27,7 @@ pipeline {
 			steps {
 				echo 'dev branch deployment ...'
 				snDevOpsStep()
-				snDevOpsArtifact(artifactsPayload:"""{"artifacts": [{"name": "development_artifact.jar","version": "1.1","semanticVersion": "1.1.0","repositoryName": "multibranch"}],"stageName": "Deploy for development"}""")
+				
 				sleep 5
 			}
 		}
